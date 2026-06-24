@@ -70,3 +70,9 @@ map("n", "<leader>fm", "<cmd>lua require('conform').format({ async = true })<CR>
 
 -- Clear search highlight
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- Trigger dressing input for renames with <leader>rn
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename" })
+
+-- Trigger dressing select for code actions with <leader>ca
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })

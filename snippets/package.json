@@ -1,0 +1,23 @@
+{
+  "name": "my-custom-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascriptreact",
+        "path": "./react.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./react.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./tsfunction.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./tsfunction.json"
+      }
+    ]
+  }
+}

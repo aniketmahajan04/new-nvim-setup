@@ -1,0 +1,13 @@
+{
+  "Empty Function": {
+    "prefix": "fn",
+    "body": ["function ${1:functionName}(${2:params}) {", "\t$0", "}"],
+    "description": "Create an empty standard JavaScript function"
+  },
+
+  "Empty Arrow Function": {
+    "prefix": "afn",
+    "body": ["const ${1:functionName} = (${2:params}) => {", "\t$0", "};"],
+    "description": "Create an empty JavaScript arrow function"
+  }
+}

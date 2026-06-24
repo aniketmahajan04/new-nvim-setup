@@ -1,25 +1,26 @@
-return {
-	{
-		"folke/trouble.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		cmd = "Trouble",
-		keys = {
-			{
-				"<leader>xx",
-				"<cmd>Trouble diagnostics toggle<cr>",
-				desc = "Diagnostics (Trouble)",
-			},
-			{ "<leader>xb", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics" },
-			{
-				"<leader>xl",
-				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-				desc = "LSP Definitions / References",
-			},
-			{ "<leader>xq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List" },
-		},
-		opts = {
-			focus = true,
-			warn_no_results = false,
-		},
-	},
-}
+return {}
+-- return {
+-- 	{
+-- 		"folke/trouble.nvim",
+-- 		dependencies = { "nvim-tree/nvim-web-devicons" },
+-- 		cmd = "Trouble",
+-- 		keys = {
+-- 			{
+-- 				"<leader>xx",
+-- 				"<cmd>Trouble diagnostics toggle<cr>",
+-- 				desc = "Diagnostics (Trouble)",
+-- 			},
+-- 			{ "<leader>xb", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics" },
+-- 			{
+-- 				"<leader>xl",
+-- 				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+-- 				desc = "LSP Definitions / References",
+-- 			},
+-- 			{ "<leader>xq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List" },
+-- 		},
+-- 		opts = {
+-- 			focus = true,
+-- 			warn_no_results = false,
+-- 		},
+-- 	},
+-- }
