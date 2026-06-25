@@ -24,8 +24,11 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
-					"clangd",
-					"ts_ls",
+					"clangd", -- c / cpp
+					"ts_ls", -- typescript / javascript
+					"rust_analyzer",
+					"gopls",
+					"tinymist", -- typst
 					"marksman",
 					"lua_ls",
 					"cssls",
@@ -98,12 +101,23 @@ return {
 			})
 
 			-- New vim.lsp.config API (nvim 0.11+)
-			vim.lsp.config("clangd", { capabilities = capabilities })
-			vim.lsp.config("ts_ls", { capabilities = capabilities })
-			vim.lsp.config("marksman", { capabilities = capabilities })
-			vim.lsp.config("cssls", { capabilities = capabilities })
-			vim.lsp.config("html", { capabilities = capabilities })
-			vim.lsp.config("jsonls", { capabilities = capabilities })
+			local servers = {
+				"clangd",
+				"ts_ls",
+				"rust_analyzer",
+				"gopls",
+				"tinymist",
+				"marksman",
+				"cssls",
+				"html",
+				"jsonls",
+				"lua_ls",
+			}
+
+			for _, server in ipairs(servers) do
+				vim.lsp.config(server, { capabilities = capabilities })
+			end
+
 			vim.lsp.config("lua_ls", {
 				capabilities = capabilities,
 				settings = {
@@ -115,16 +129,17 @@ return {
 				},
 			})
 
-			-- Enable all configured servers
-			vim.lsp.enable({
-				"clangd",
-				"ts_ls",
-				"marksman",
-				"cssls",
-				"html",
-				"jsonls",
-				"lua_ls",
+			vim.lsp.config("tinymist", {
+				capabilities = capabilities,
+				settings = {
+					tinymist = {
+						exportPdf = "onSave",
+						outputPath = "$dir/$name",
+					},
+				},
 			})
+
+			vim.lsp.enable(servers)
 		end,
 	},
 }

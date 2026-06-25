@@ -26,6 +26,8 @@ return {
 					css = { "prettier" },
 					json = { "prettier" },
 					yaml = { "prettier" },
+					rust = { "rustfmt", lsp_format = "fallback" },
+					go = { "gofmt", lsp_format = "fallback" },
 					lua = { "stylua" },
 					typst = { "tinymist" },
 				},
